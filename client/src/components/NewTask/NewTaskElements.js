@@ -4,7 +4,7 @@ export const NewTaskBtn = styled.button`
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 0.75em;
+  padding: 0.98em;
   border: 1px solid lightgray;
   border-radius: 0.5em;
   margin-bottom: 0.5em;
@@ -13,6 +13,7 @@ export const NewTaskBtn = styled.button`
   font-family: "Open Sans";
   color: #3a8def;
   cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 `;
 
 export const NewTaskWrapper = styled.div`

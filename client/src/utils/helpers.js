@@ -65,3 +65,8 @@ export const onDragEnd = (result, initialData, setInitialData) => {
 export const toggleInputType = (inputType, setInputType) => {
   setInputType(inputType === "button" ? "text" : "button");
 };
+
+// toggles <Sidebar />
+export const toggleSidebar = (isOpen, setIsOpen) => {
+  setIsOpen(!isOpen);
+};
