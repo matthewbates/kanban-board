@@ -1,12 +1,38 @@
 import { useState, useEffect } from "react";
 
+import { DragDropContext } from "react-beautiful-dnd";
+
+import { KanbanBoardContainer } from "./KanbanBoardElements";
+
+import Column from "../Column";
+
+import { initialData } from "../../utils/data";
+
 export default function KanbanBoard() {
-  const initialData = { tasks: {}, columns: {}, columnOrder: [] };
-  const [board, setBoard] = useState(initialData);
+  const onDragEnd = (result) => {
+    console.log(result);
+    const { source, destination, draggableId } = result;
+    if (!destination) return;
+  };
 
-  useEffect(() => {
-    
-  }, []);
-
-  return <div>index</div>;
+  return (
+    <KanbanBoardContainer>
+      <DragDropContext onDragEnd={onDragEnd}>
+        {initialData.columnOrder.map((columnId) => {
+          const column = initialData.columns[columnId];
+          const tasks = column.taskIds?.map(
+            (taskId) => initialData.tasks[taskId]
+          );
+          return (
+            <Column
+              key={column.id}
+              droppableId={column.id}
+              column={column}
+              tasks={tasks}
+            />
+          );
+        })}
+      </DragDropContext>
+    </KanbanBoardContainer>
+  );
 }
