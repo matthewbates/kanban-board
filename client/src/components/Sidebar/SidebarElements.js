@@ -8,5 +8,5 @@ export const SidebarContainer = styled.div`
   height: 100vh;
   background: rgba(0, 0, 0, 0.75);
   transition: 0.3s ease;
-  width: 60%;
+  width: 50%;
 `;

@@ -1,4 +1,4 @@
-import { Squeeze as Hamburger } from "hamburger-react";
+import { Squash as Hamburger } from "hamburger-react";
 
 import { BurgerContainer } from "./BurgerElements";
 
@@ -8,6 +8,7 @@ export default function Burger({ isOpen, setIsOpen }) {
   return (
     <BurgerContainer $isOpen={isOpen}>
       <Hamburger
+        size={24}
         toggled={isOpen}
         toggle={() => toggleSidebar(isOpen, setIsOpen)}
       />
