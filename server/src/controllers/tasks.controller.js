@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Task = require("../models/tasks.model");
 
-const createNewTask = (req, res, next) => {
+const postNewTask = (req, res, next) => {
   const task = new Task({
     _id: new mongoose.Types.ObjectId(),
     content: req.body.content,
@@ -36,6 +36,7 @@ const getAllTasks = (req, res, next) => {
       const response = {
         tasks: docs.map((task) => {
           return {
+            tasks: task.length,
             id: task._id,
             content: task.content,
           };
@@ -51,4 +52,4 @@ const getAllTasks = (req, res, next) => {
     });
 };
 
-module.exports = { createNewTask, getAllTasks };
+module.exports = { postNewTask, getAllTasks };
