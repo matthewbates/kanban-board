@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Draggable } from "react-beautiful-dnd";
 import { PiDotsThreeOutlineFill } from "react-icons/pi";
 import Importance from "../Importance";
-import { NewContentContainer } from "../NewTask/NewTaskElements";
 
 import {
   TaskContainer,
@@ -15,10 +14,6 @@ import {
 export default function Task({ content, draggableId, index }) {
   const [isHovered, setIsHovered] = useState(false);
   const [showPopover, setShowPopover] = useState(false);
-
-  const toggleHovered = () => {
-    setIsHovered(!isHovered);
-  };
 
   const togglePopover = () => {
     setShowPopover(!showPopover);
@@ -33,8 +28,8 @@ export default function Task({ content, draggableId, index }) {
           {...provided.dragHandleProps}
         >
           <ContentContainer
-            onMouseEnter={toggleHovered}
-            onMouseLeave={toggleHovered}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
           >
             <TaskWrapper>{content}</TaskWrapper>
             <DotsWrapper isHovered={isHovered} onClick={togglePopover}>

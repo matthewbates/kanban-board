@@ -13,7 +13,6 @@ import { onDragEnd } from "../../utils/helpers";
 export default function KanbanBoard() {
   const [initialData, setInitialData] = useState(data);
 
-  //! REFACTOR USE EFFECT TO hooks.js
   useEffect(() => {
     const fetchTasks = async () => {
       try {

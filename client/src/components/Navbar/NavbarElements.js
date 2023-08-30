@@ -14,7 +14,7 @@ export const BurgerWrapper = styled.div`
   display: flex;
   margin-right: auto;
 
-  @media screen and (min-width: 820px) {
+  @media screen and (max-width: 768px) {
     display: none;
   }
 `;

@@ -41,6 +41,7 @@ export default function Column({ setInitialData, droppableId, column, tasks }) {
           };
         });
         setNewTask("");
+        setInputType("button");
       }
     } catch (error) {
       console.log(error);
