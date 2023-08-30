@@ -9,7 +9,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <NavbarContainer isOpen={isOpen}>
+    <NavbarContainer $isOpen={isOpen}>
       <BurgerWrapper>
         <Burger isOpen={isOpen} setIsOpen={setIsOpen} />
       </BurgerWrapper>

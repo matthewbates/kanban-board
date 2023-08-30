@@ -10,4 +10,16 @@ export const SidebarContainer = styled.div`
   transition: 0.3s ease;
   width: 50%;
   z-index: 998;
+
+  @media screen and (min-width: 820px) {
+    width: 40%;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 30%;
+  }
+
+  @media screen and (min-width: 1500px) {
+    width: 25%;
+  }
 `;

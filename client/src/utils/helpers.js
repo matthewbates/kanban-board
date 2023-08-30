@@ -70,3 +70,20 @@ export const toggleInputType = (inputType, setInputType) => {
 export const toggleSidebar = (isOpen, setIsOpen) => {
   setIsOpen(!isOpen);
 };
+
+// allows the user to use return/enter to submit a new task
+export const handleKeyPress = (
+  e,
+  postTask,
+  setInputType,
+  column,
+  newTask,
+  setNewTask,
+  setInitialData
+) => {
+  if (e.target.value === "") setInputType("button");
+  if (e.key === "Enter") {
+    e.preventDefault();
+    postTask();
+  }
+};

@@ -32,10 +32,10 @@ export default function Task({ content, draggableId, index }) {
             onMouseLeave={() => setIsHovered(false)}
           >
             <TaskWrapper>{content}</TaskWrapper>
-            <DotsWrapper isHovered={isHovered} onClick={togglePopover}>
+            {/* <DotsWrapper isHovered={isHovered} onClick={togglePopover}>
               <PiDotsThreeOutlineFill />
-            </DotsWrapper>
-            {showPopover && <Importance />}
+            </DotsWrapper> */}
+            {/* {showPopover && <Importance />} */}
           </ContentContainer>
         </TaskContainer>
       )}
