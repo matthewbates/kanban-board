@@ -5,4 +5,6 @@ export const TitleContainer = styled.div`
   border-bottom: ${({ color }) => `2px solid ${color}`};
   font-family: "Raleway";
   margin-bottom: 0.5em;
+  color: ${({ theme }) => (theme === "dark" ? "#ffffff" : "#000000")};
+  opacity: 87%;
 `;

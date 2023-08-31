@@ -72,18 +72,15 @@ export const toggleSidebar = (isOpen, setIsOpen) => {
 };
 
 // allows the user to use return/enter to submit a new task
-export const handleKeyPress = (
-  e,
-  postTask,
-  setInputType,
-  column,
-  newTask,
-  setNewTask,
-  setInitialData
-) => {
+export const handleKeyPress = (e, postTask, setInputType) => {
   if (e.target.value === "") setInputType("button");
   if (e.key === "Enter") {
     e.preventDefault();
     postTask();
   }
+};
+
+// toggles the theme from light to dark
+export const toggleTheme = (theme, setTheme) => {
+  theme === "light" ? setTheme("dark") : setTheme("light");
 };

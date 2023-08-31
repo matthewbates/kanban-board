@@ -1,11 +1,11 @@
 import { TitleContainer } from "./TitleElements";
 
-export default function Title({ column, tasks }) {
+export default function Title({ column, tasks, theme }) {
   const { color, title } = column;
   const { length } = tasks;
 
   return (
-    <TitleContainer color={color}>
+    <TitleContainer color={color} theme={theme}>
       {title} ({length})
     </TitleContainer>
   );

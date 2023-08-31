@@ -7,13 +7,13 @@ export const getTasks = async (setInitialData) => {
       const fetchedTasks = response.data.tasks;
       setInitialData((prevData) => {
         const updatedColumns = { ...prevData.columns };
-
-        fetchedTasks.forEach((task) => {
-          const columnId = task.status;
-          if (updatedColumns[columnId]) {
-            updatedColumns[columnId].taskIds.push(task.id);
-          }
-        });
+        // fetchedTasks.forEach((task) => {
+        //   const columnId = task.status;
+        //   console.log(columnId);
+        //   if (updatedColumns[columnId]) {
+        //     updatedColumns[columnId].taskIds.push(task.id);
+        //   }
+        // });
         const updatedTasks = { ...prevData.tasks };
         fetchedTasks.forEach((task) => {
           updatedTasks[task.id] = {

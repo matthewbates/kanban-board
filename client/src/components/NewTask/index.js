@@ -13,15 +13,19 @@ export default function NewTask({
   setInputType,
   column,
   setInitialData,
+  theme,
 }) {
   return (
     <>
       {inputType === "button" ? (
-        <NewTaskBtn onClick={() => toggleInputType(inputType, setInputType)}>
+        <NewTaskBtn
+          theme={theme}
+          onClick={() => toggleInputType(inputType, setInputType)}
+        >
           <FaPlus /> Add Item
         </NewTaskBtn>
       ) : (
-        <NewTaskWrapper>
+        <NewTaskWrapper theme={theme}>
           <NewTaskInput
             type="text"
             value={newTask}

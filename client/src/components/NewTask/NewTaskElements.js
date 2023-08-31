@@ -14,6 +14,7 @@ export const NewTaskBtn = styled.button`
   color: #3a8def;
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  /* opacity: ${({ theme }) => theme === "dark" && "87%"}; */
 `;
 
 export const NewTaskWrapper = styled.div`

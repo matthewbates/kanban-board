@@ -19,6 +19,7 @@ export const ContentContainer = styled.div`
 export const TaskWrapper = styled.div`
   max-width: 90%;
   font-size: 0.9em;
+  color: black;
 `;
 
 export const DotsWrapper = styled.div`

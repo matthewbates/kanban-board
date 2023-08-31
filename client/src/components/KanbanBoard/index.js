@@ -11,12 +11,14 @@ import { data } from "../../utils/data";
 import { onDragEnd } from "../../utils/helpers";
 import { getTasks } from "../../utils/axios";
 
-export default function KanbanBoard() {
+export default function KanbanBoard({ theme }) {
   const [initialData, setInitialData] = useState(data);
 
   useEffect(() => {
     getTasks(setInitialData);
   }, []);
+
+  console.log(localStorage);
 
   return (
     <KanbanBoardContainer>
@@ -36,6 +38,7 @@ export default function KanbanBoard() {
               droppableId={column.id}
               column={column}
               tasks={tasks}
+              theme={theme}
             />
           );
         })}
