@@ -15,7 +15,11 @@ export default function KanbanBoard({ theme }) {
   const [initialData, setInitialData] = useState(data);
 
   useEffect(() => {
-    getTasks(setInitialData);
+    // const storedTasks = JSON.parse(localStorage.getItem("tasks"));
+    // if (storedTasks) {
+    //   setInitialData(storedTasks);
+    // }
+    // getTasks(setInitialData);
   }, []);
 
   console.log(localStorage);

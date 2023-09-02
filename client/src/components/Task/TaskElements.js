@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const TaskContainer = styled.div`
-  padding: 1em;
+  padding: 0.8em;
   border: 1px solid lightgray;
   border-radius: 0.5em;
   margin-bottom: 0.5em;

@@ -7,13 +7,6 @@ export const getTasks = async (setInitialData) => {
       const fetchedTasks = response.data.tasks;
       setInitialData((prevData) => {
         const updatedColumns = { ...prevData.columns };
-        // fetchedTasks.forEach((task) => {
-        //   const columnId = task.status;
-        //   console.log(columnId);
-        //   if (updatedColumns[columnId]) {
-        //     updatedColumns[columnId].taskIds.push(task.id);
-        //   }
-        // });
         const updatedTasks = { ...prevData.tasks };
         fetchedTasks.forEach((task) => {
           updatedTasks[task.id] = {
@@ -41,7 +34,7 @@ export const postTask = async (column, newTask, setNewTask, setInitialData) => {
     });
     if (response.status === 201) {
       const newTask = {
-        id: response.data.result._id,
+        id: String(response.data.result._id),
         content: response.data.result.content,
       };
       setInitialData((prevData) => {

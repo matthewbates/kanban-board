@@ -35,7 +35,12 @@ export default function Column({
             />
             {tasks.map(({ id, content }, index) => (
               <Fragment key={id}>
-                <Task draggableId={id} index={index} content={content} />
+                <Task
+                  draggableId={id}
+                  index={index}
+                  content={content}
+                  theme={theme}
+                />
               </Fragment>
             ))}
             {provided.placeholder}

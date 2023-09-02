@@ -4,7 +4,7 @@ export const NewTaskBtn = styled.button`
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 0.98em;
+  padding: 0.99em;
   border: 1px solid lightgray;
   border-radius: 0.5em;
   margin-bottom: 0.5em;

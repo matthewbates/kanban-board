@@ -11,7 +11,7 @@ import {
   DotsWrapper,
 } from "./TaskElements";
 
-export default function Task({ content, draggableId, index }) {
+export default function Task({ content, draggableId, index, theme }) {
   const [isHovered, setIsHovered] = useState(false);
   const [showPopover, setShowPopover] = useState(false);
 
@@ -23,6 +23,7 @@ export default function Task({ content, draggableId, index }) {
     <Draggable draggableId={draggableId} index={index}>
       {(provided) => (
         <TaskContainer
+          theme={theme}
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
