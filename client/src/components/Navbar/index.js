@@ -1,11 +1,6 @@
 import { useState } from "react";
 
-import {
-  NavbarContainer,
-  BurgerWrapper,
-  ThemeWrapper,
-  ThemeBtn,
-} from "./NavbarElements";
+import { NavbarContainer, BurgerWrapper, ThemeWrapper } from "./NavbarElements";
 
 import Burger from "../Burger";
 import Sidebar from "../Sidebar";
@@ -13,6 +8,11 @@ import Toggle from "../Toggle";
 
 export default function Navbar({ toggle, theme, setTheme }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  // toggles the state of <Sidebar />
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <NavbarContainer $isOpen={isOpen}>

@@ -4,6 +4,7 @@ export const getTasks = async (setInitialData) => {
   try {
     const response = await axios.get("http://localhost:8000/tasks");
     if (response.status === 200) {
+      // destructures tasks
       const fetchedTasks = response.data.tasks;
       setInitialData((prevData) => {
         const updatedColumns = { ...prevData.columns };

@@ -1,9 +1,14 @@
 import { FaPlus, FaArrowRight } from "react-icons/fa";
 import { FaX } from "react-icons/fa6";
 
-import { NewTaskBtn, NewTaskWrapper, NewTaskInput } from "./NewTaskElements";
+import {
+  NewTaskBtn,
+  NewTaskWrapper,
+  NewTaskInput,
+  ArrowWrapper,
+} from "./NewTaskElements";
 
-import { toggleInputType, handleKeyPress } from "../../utils/helpers";
+import { toggleInputType } from "../../utils/helpers";
 import { postTask } from "../../utils/axios";
 
 export default function NewTask({
@@ -31,20 +36,15 @@ export default function NewTask({
             value={newTask}
             placeholder="Enter name"
             onChange={(e) => setNewTask(e.target.value)}
-            // onKeyDown={() =>
-            //   postTask(column, newTask, setNewTask, setInitialData)
-            // }
           />
-          <FaArrowRight
-            style={{
-              display: "flex",
-              marginLeft: "auto",
-            }}
-            onClick={() =>
-              postTask(column, newTask, setNewTask, setInitialData)
-            }
-          />
-          <FaX onClick={() => setInputType("button")} />
+          <ArrowWrapper>
+            <FaArrowRight
+              onClick={() =>
+                postTask(column, newTask, setNewTask, setInitialData)
+              }
+            />
+            <FaX onClick={() => setInputType("button")} />
+          </ArrowWrapper>
         </NewTaskWrapper>
       )}
     </>
