@@ -19,6 +19,10 @@ export default function Task({ content, draggableId, index, theme }) {
     setShowPopover(!showPopover);
   };
 
+  const toggleHovered = () => {
+    setIsHovered(!isHovered);
+  };
+
   return (
     <Draggable draggableId={draggableId} index={index}>
       {(provided) => (
@@ -29,14 +33,14 @@ export default function Task({ content, draggableId, index, theme }) {
           {...provided.dragHandleProps}
         >
           <ContentContainer
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+            onMouseEnter={toggleHovered}
+            onMouseLeave={toggleHovered}
           >
             <TaskWrapper>{content}</TaskWrapper>
-            {/* <DotsWrapper isHovered={isHovered} onClick={togglePopover}>
+            <DotsWrapper isHovered={isHovered} onClick={togglePopover}>
               <PiDotsThreeOutlineFill />
-            </DotsWrapper> */}
-            {/* {showPopover && <Importance />} */}
+            </DotsWrapper>
+            {showPopover && <Importance />}
           </ContentContainer>
         </TaskContainer>
       )}

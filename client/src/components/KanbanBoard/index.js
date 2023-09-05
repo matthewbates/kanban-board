@@ -22,8 +22,6 @@ export default function KanbanBoard({ theme }) {
     // getTasks(setInitialData);
   }, []);
 
-  console.log(localStorage);
-
   return (
     <KanbanBoardContainer>
       <DragDropContext

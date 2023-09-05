@@ -4,7 +4,7 @@ export const ColumnContainer = styled.div`
   margin: 0.5em;
   border-radius: 0.5em;
   background: ${({ theme }) =>
-    theme === "dark" ? "hsl(233, 8%, 19%)" : "#ffffff"};
+    theme === "dark" ? "hsl(233, 8%, 19%)" : "white"};
   padding: 0.5em;
   width: 100%;
   max-width: 300px;

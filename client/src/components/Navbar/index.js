@@ -21,9 +21,7 @@ export default function Navbar({ toggle, theme, setTheme }) {
       </BurgerWrapper>
       <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
       <ThemeWrapper>
-        <ThemeBtn onClick={() => toggle(theme, setTheme)}>
-          <Toggle />
-        </ThemeBtn>
+        <Toggle toggle={toggle} theme={theme} setTheme={setTheme} />
       </ThemeWrapper>
     </NavbarContainer>
   );

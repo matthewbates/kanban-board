@@ -1,5 +1,5 @@
 export const data = {
-  // taskId
+  // tasks === taskId
   tasks: {
     "task-1": {
       id: "task-1",
@@ -18,7 +18,7 @@ export const data = {
       content: "This is task 4",
     },
   },
-  // columnId
+  // columns === columnId
   columns: {
     "column-1": {
       id: "column-1",

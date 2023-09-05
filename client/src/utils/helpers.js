@@ -84,3 +84,8 @@ export const handleKeyPress = (e, postTask, setInputType) => {
 export const toggleTheme = (theme, setTheme) => {
   theme === "light" ? setTheme("dark") : setTheme("light");
 };
+
+// toggles the hover state in <Task />
+export const toggleHover = (isHovered, setIsHovered) => {
+  setIsHovered(!isHovered);
+};
