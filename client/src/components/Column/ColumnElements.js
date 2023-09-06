@@ -6,7 +6,7 @@ export const ColumnContainer = styled.div`
   background: ${({ theme }) =>
     theme === "dark" ? "hsl(233, 8%, 19%)" : "white"};
   padding: 0.5em;
-  width: 100%;
+  width: 90%;
   transition: 0.5s linear;
   box-shadow: ${({ theme }) =>
     theme === "light"

@@ -1,26 +1,28 @@
 import axios from "axios";
 
+import { saveTasksToLocalStorage } from "./helpers";
+
 export const getTasks = async (setInitialData) => {
   try {
     const response = await axios.get("http://localhost:8000/tasks");
     if (response.status === 200) {
-      // destructures tasks
+      console.log(response);
       const fetchedTasks = response.data.tasks;
-      setInitialData((prevData) => {
-        const updatedColumns = { ...prevData.columns };
-        const updatedTasks = { ...prevData.tasks };
-        fetchedTasks.forEach((task) => {
-          updatedTasks[task.id] = {
-            id: task.id,
-            content: task.content,
-          };
-        });
-        return {
-          ...prevData,
-          tasks: updatedTasks,
-          columns: updatedColumns,
-        };
-      });
+      // setInitialData((prevData) => {
+      //   const updatedColumns = { ...prevData.columns };
+      //   const updatedTasks = { ...prevData.tasks };
+      //   fetchedTasks.forEach((task) => {
+      //     updatedTasks[task.id] = {
+      //       id: task.id,
+      //       content: task.content,
+      //     };
+      //   });
+      //   return {
+      //     ...prevData,
+      //     tasks: updatedTasks,
+      //     columns: updatedColumns,
+      //   };
+      // });
     }
   } catch (error) {
     console.log(error);
@@ -45,6 +47,10 @@ export const postTask = async (column, newTask, setNewTask, setInitialData) => {
           ...prevData.tasks,
           [newTask.id]: newTask,
         };
+        saveTasksToLocalStorage({
+          tasks: updatedTasks,
+          columns: updatedColumns,
+        });
         return {
           ...prevData,
           tasks: updatedTasks,

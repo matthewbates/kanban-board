@@ -2,21 +2,25 @@ import styled from "styled-components";
 
 export const PopoverContainer = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
   position: absolute;
+  flex-direction: column;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 200px;
-  width: 200px;
+  height: 350px;
+  width: 175px;
   background: #f1f2f2;
+  border-radius: 0.5em;
+  z-index: 999;
+`;
+
+export const PopoverWrapper = styled.div`
+  margin-top: 0.5em;
 `;
 
 export const PopoverSelect = styled.select`
-  width: 75%;
   font-family: "Open Sans";
-  font-size: 1em;
 `;
 
 export const PopoverOption = styled.option``;

@@ -56,7 +56,6 @@ export const onDragEnd = (result, initialData, setInitialData) => {
       [newFinish.id]: newFinish,
     },
   });
-  console.log(newStart, newFinish);
 };
 
 // handles the switch between <button> and <input />
@@ -86,4 +85,20 @@ export const toggleTheme = (theme, setTheme) => {
 // toggles the hover state in <Task />
 export const toggleHover = (isHovered, setIsHovered) => {
   setIsHovered(!isHovered);
+};
+
+// toggles the popover state in <Task />
+export const togglePopover = (showPopover, setShowPopover) => {
+  setShowPopover(!showPopover);
+};
+
+// saves tasks to localStorage
+export const saveTasksToLocalStorage = (tasks) => {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+};
+
+// gets tasks from localStorage
+export const getTasksFromLocalStorage = () => {
+  const tasksJSON = localStorage.getItem("tasks");
+  return JSON.parse(tasksJSON);
 };

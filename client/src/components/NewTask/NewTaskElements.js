@@ -19,7 +19,7 @@ export const NewTaskBtn = styled.button`
 export const NewTaskWrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 0.5em;
   padding: 0.75em;
   border: 1px solid lightgray;
   border-radius: 0.5em;
@@ -40,4 +40,5 @@ export const NewTaskInput = styled.input`
 export const ArrowWrapper = styled.div`
   display: flex;
   margin: auto;
+  gap: 0.25em;
 `;

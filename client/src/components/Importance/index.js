@@ -1,19 +1,25 @@
-import Popover from "@mui/material/Popover";
+import { Popover, Typography } from "@mui/material";
 
 import {
   PopoverContainer,
+  PopoverWrapper,
   PopoverSelect,
   PopoverOption,
 } from "./ImportanceElements";
 
 export default function Importance() {
   return (
-    <PopoverContainer>
-      <PopoverSelect>
-        <PopoverOption>High</PopoverOption>
-        <PopoverOption>Medium</PopoverOption>
-        <PopoverOption>Low</PopoverOption>
-      </PopoverSelect>
-    </PopoverContainer>
+    // <PopoverContainer>
+    //   <PopoverWrapper>
+    <Popover
+      anchorOrigin={{
+        vertical: "bottom",
+        horizontal: "left",
+      }}
+    >
+      <Typography sx={{ p: 2 }}>The content of the Popover.</Typography>
+    </Popover>
+    //   </PopoverWrapper>
+    // </PopoverContainer>
   );
 }
