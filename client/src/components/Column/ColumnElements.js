@@ -6,7 +6,7 @@ export const ColumnContainer = styled.div`
   background: ${({ theme }) =>
     theme === "dark" ? "hsl(233, 8%, 19%)" : "white"};
   padding: 0.5em;
-  width: 90%;
+  width: 80%;
   transition: 0.5s linear;
   box-shadow: ${({ theme }) =>
     theme === "light"
@@ -14,7 +14,7 @@ export const ColumnContainer = styled.div`
       : "0 -2px 10px rgba(0, 0, 0, 1)"};
 
   @media screen and (min-width: 490px) {
-    max-width: 350px;
+    max-width: 250px;
   }
 
   @media screen and (min-width: 768px) {

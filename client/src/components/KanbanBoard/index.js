@@ -8,16 +8,22 @@ import { KanbanBoardContainer } from "./KanbanBoardElements";
 import Column from "../Column";
 
 import { data } from "../../utils/data";
-import { onDragEnd, getTasksFromLocalStorage } from "../../utils/helpers";
+import {
+  onDragEnd,
+  getTasksFromLocalStorage,
+  saveTasksToLocalStorage,
+} from "../../utils/helpers";
+import { getTasks } from "../../utils/axios";
 
 export default function KanbanBoard({ theme }) {
   const [initialData, setInitialData] = useState(data);
 
   useEffect(() => {
-    const savedTasks = getTasksFromLocalStorage();
-    if (savedTasks) {
-      setInitialData({ ...initialData, ...savedTasks });
-    }
+    // const savedTasks = getTasksFromLocalStorage();
+    // if (savedTasks) {
+    //   setInitialData({ ...initialData, ...savedTasks });
+    //   console.log(savedTasks);
+    // }
   }, []);
 
   return (

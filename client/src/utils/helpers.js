@@ -56,6 +56,7 @@ export const onDragEnd = (result, initialData, setInitialData) => {
       [newFinish.id]: newFinish,
     },
   });
+  saveTasksToLocalStorage(initialData);
 };
 
 // handles the switch between <button> and <input />
@@ -99,6 +100,6 @@ export const saveTasksToLocalStorage = (tasks) => {
 
 // gets tasks from localStorage
 export const getTasksFromLocalStorage = () => {
-  const tasksJSON = localStorage.getItem("tasks");
-  return JSON.parse(tasksJSON);
+  const tasks = localStorage.getItem("tasks");
+  return tasks ? JSON.parse(tasks) : null;
 };

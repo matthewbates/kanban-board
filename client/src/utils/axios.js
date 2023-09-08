@@ -8,21 +8,21 @@ export const getTasks = async (setInitialData) => {
     if (response.status === 200) {
       console.log(response);
       const fetchedTasks = response.data.tasks;
-      // setInitialData((prevData) => {
-      //   const updatedColumns = { ...prevData.columns };
-      //   const updatedTasks = { ...prevData.tasks };
-      //   fetchedTasks.forEach((task) => {
-      //     updatedTasks[task.id] = {
-      //       id: task.id,
-      //       content: task.content,
-      //     };
-      //   });
-      //   return {
-      //     ...prevData,
-      //     tasks: updatedTasks,
-      //     columns: updatedColumns,
-      //   };
-      // });
+      setInitialData((prevData) => {
+        const updatedColumns = { ...prevData.columns };
+        const updatedTasks = { ...prevData.tasks };
+        fetchedTasks.forEach((task) => {
+          updatedTasks[task.id] = {
+            id: task.id,
+            content: task.content,
+          };
+        });
+        return {
+          ...prevData,
+          tasks: updatedTasks,
+          columns: updatedColumns,
+        };
+      });
     }
   } catch (error) {
     console.log(error);
@@ -58,6 +58,7 @@ export const postTask = async (column, newTask, setNewTask, setInitialData) => {
         };
       });
       setNewTask("");
+      saveTasksToLocalStorage();
     }
   } catch (error) {
     console.log(error);
