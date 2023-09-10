@@ -23,7 +23,7 @@ export const TaskWrapper = styled.div`
 `;
 
 export const DotsWrapper = styled.div`
-  display: ${({ isHovered }) => (isHovered === true ? "flex" : "none")};
+  display: ${({ $isHovered }) => ($isHovered === true ? "flex" : "none")};
   color: black;
   cursor: pointer;
 `;

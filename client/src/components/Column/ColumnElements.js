@@ -14,7 +14,7 @@ export const ColumnContainer = styled.div`
       : "0 -2px 10px rgba(0, 0, 0, 1)"};
 
   @media screen and (min-width: 490px) {
-    max-width: 250px;
+    max-width: 350px;
   }
 
   @media screen and (min-width: 768px) {

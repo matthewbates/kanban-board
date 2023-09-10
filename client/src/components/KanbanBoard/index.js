@@ -26,6 +26,8 @@ export default function KanbanBoard({ theme }) {
     // }
   }, []);
 
+  console.log(initialData);
+
   return (
     <KanbanBoardContainer>
       <DragDropContext

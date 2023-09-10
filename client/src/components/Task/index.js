@@ -35,7 +35,7 @@ export default function Task({ content, draggableId, index, theme }) {
           >
             <TaskWrapper>{content}</TaskWrapper>
             <DotsWrapper
-              isHovered={isHovered}
+              $isHovered={isHovered}
               onClick={() => togglePopover(showPopover, setShowPopover)}
             >
               <PiDotsThreeOutlineFill />
